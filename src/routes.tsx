@@ -33,39 +33,44 @@ export const routes = {
   },
 };
 
-export const router = createBrowserRouter([
+export const router = createBrowserRouter(
+  [
+    {
+      path: routes.HOME.path,
+      element: <Layout />,
+      children: [
+        {
+          path: routes.HOME.path,
+          element: <HomePage />,
+        },
+        {
+          path: routes.COUNTER.path,
+          element: <CounterPage />,
+        },
+        {
+          path: routes.GENERATOR.path,
+          element: <GeneratorPage />,
+        },
+        {
+          path: routes.REGISTRATION.path,
+          element: <RegistrationPage />,
+        },
+        {
+          path: routes.STEPPER.path,
+          element: <StepperPage />,
+        },
+        {
+          path: routes.PRODUCTS.path,
+          element: <ProductsPage />,
+        },
+        {
+          path: routes.BASKET.path,
+          element: <BasketPage />,
+        },
+      ],
+    },
+  ],
   {
-    path: routes.HOME.path,
-    element: <Layout />,
-    children: [
-      {
-        path: routes.HOME.path,
-        element: <HomePage />,
-      },
-      {
-        path: routes.COUNTER.path,
-        element: <CounterPage />,
-      },
-      {
-        path: routes.GENERATOR.path,
-        element: <GeneratorPage />,
-      },
-      {
-        path: routes.REGISTRATION.path,
-        element: <RegistrationPage />,
-      },
-      {
-        path: routes.STEPPER.path,
-        element: <StepperPage />,
-      },
-      {
-        path: routes.PRODUCTS.path,
-        element: <ProductsPage />,
-      },
-      {
-        path: routes.BASKET.path,
-        element: <BasketPage />,
-      },
-    ],
-  },
-]);
+    basename: "/sr-react-workshop/", // Specify your base URL here
+  }
+);
